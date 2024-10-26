@@ -18,13 +18,16 @@ namespace JWTtest.Services
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+
 
         private readonly JWT _jwt;
-        public AuthServices(UserManager<ApplicationUser> userManager,IOptions<JWT> jwt, RoleManager<IdentityRole> roleManager)
+        public AuthServices(UserManager<ApplicationUser> userManager,IOptions<JWT> jwt, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _jwt = jwt.Value;
             _roleManager = roleManager;
+            _signInManager = signInManager;
         }
 
         async Task<AuthModel> IAuthServices.RegisteraAsync(RegisterModel model)
@@ -134,6 +137,16 @@ namespace JWTtest.Services
             var result = await _userManager.AddToRoleAsync(user, model.Role);
 
             return result.Succeeded ? string.Empty : "something Went Wrong";
+        }
+
+        public async Task<ApplicationUser> GetUserData(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            //var userClaims = await _userManager.GetClaimsAsync(user);
+            //var claimsIdentity = new ClaimsIdentity(userClaims, IdentityConstants.ApplicationScheme);
+            //var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+            return user;
         }
     }
 }

@@ -8,5 +8,6 @@ namespace JWTtest.Services
         Task<AuthModel> RegisteraAsync(RegisterModel model);
         Task<AuthModel> GetTokenAsync(TokenRequestModel model);
         Task<string> AddRoleAsync(AddRoleModel model);
+        Task<ApplicationUser> GetUserData(string userName);
     }
 }

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\WEP API\\TASKS\\JWT\\JWTtest\\JWTtest\\JWTtest.csproj": {}
+    "C:\\Users\\ahmed.taha\\source\\repos\\Secure-API-With-JWT\\JWTtest\\JWTtest.csproj": {}
   },
   "projects": {
-    "G:\\WEP API\\TASKS\\JWT\\JWTtest\\JWTtest\\JWTtest.csproj": {
+    "C:\\Users\\ahmed.taha\\source\\repos\\Secure-API-With-JWT\\JWTtest\\JWTtest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\WEP API\\TASKS\\JWT\\JWTtest\\JWTtest\\JWTtest.csproj",
+        "projectUniqueName": "C:\\Users\\ahmed.taha\\source\\repos\\Secure-API-With-JWT\\JWTtest\\JWTtest.csproj",
         "projectName": "JWTtest",
-        "projectPath": "G:\\WEP API\\TASKS\\JWT\\JWTtest\\JWTtest\\JWTtest.csproj",
-        "packagesPath": "C:\\Users\\ahmoh\\.nuget\\packages\\",
-        "outputPath": "G:\\WEP API\\TASKS\\JWT\\JWTtest\\JWTtest\\obj\\",
+        "projectPath": "C:\\Users\\ahmed.taha\\source\\repos\\Secure-API-With-JWT\\JWTtest\\JWTtest.csproj",
+        "packagesPath": "C:\\Users\\ahmed.taha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ahmed.taha\\source\\repos\\Secure-API-With-JWT\\JWTtest\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ahmoh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ahmed.taha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -51,6 +53,10 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.3, )"
+            },
+            "Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers": {
+              "target": "Package",
+              "version": "[0.4.421302, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -82,7 +88,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.27.0, )"
+              "version": "[7.7.1, )"
             }
           },
           "imports": [
@@ -104,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

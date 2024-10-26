@@ -1,4 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 using JWTtest.Models;
 using JWTtest.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -65,6 +69,27 @@ namespace JWTtest.Controllers
                 return BadRequest(result);
             }
             return Ok(model);
+        }
+
+        [HttpPost("SendUserData")]
+        public async Task<IActionResult> SendUserData()
+        {
+            var user = await _authServices.GetUserData("ah.mohsen");
+            var jsonData = JsonSerializer.Serialize(user);
+            HttpClient httpClient = new HttpClient();
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            try
+            {
+                HttpResponseMessage response = await httpClient.PostAsync("https://localhost:7233/WeatherForecast/GetUserData", content);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseBody);
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+            return Ok();
         }
     }
 }
